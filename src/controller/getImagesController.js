@@ -23,7 +23,7 @@ exports.getData = (request, response) => {
     // request -> data came from client
     // response -> send data to client
 
-    response.send("Hello anjana");
+    response.send("Swiggy backend service");
 }
 
 exports.getImages = (req, res)  => {
