@@ -1,3 +1,4 @@
+const path = require('path');
 
 exports.getCountry = (req, res) => {
 
@@ -13,9 +14,9 @@ exports.getCountry = (req, res) => {
     }
 
     // convert object to string
-    const countriesStr = JSON.stringify(countries);
+    // const countriesStr = JSON.stringify(countries);
 
-    res.send(countriesStr);
+    res.status(200).json(countries);
 }
 
 exports.getData = (request, response) => {
@@ -23,4 +24,18 @@ exports.getData = (request, response) => {
     // response -> send data to client
 
     response.send("Hello anjana");
+}
+
+exports.getImages = (req, res)  => {
+    
+
+    const imageName = req.query.ImageName;
+    console.log(imageName);
+
+    const images = {
+        name: imageName,
+        link: `/images/${imageName}`
+    }
+
+    res.status(200).json(images);
 }
